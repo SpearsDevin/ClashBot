@@ -55,27 +55,32 @@ client.on('ready', async() => {
 });
 client.on('ready', async() => {
 
-  console.log("Raid Weekend")
+  console.log("CWL")
   const clan = await Clans.find({})
-  const user = await User.find({})
-  cron.schedule(`* */12 * * *`, async() => {
-    console.log("hi")
-    const t = await Events.find({})
-    const text1 = t[0].goldPassEnd
-    const year =  text1.slice(0, 4);
-    const month = text1.slice(4, 6)
-    const day = text1.slice(6, 8)
-    const hour = text1.slice(9, 11)
-    const minute = text1.slice(11, 13)
-  
-    cron.schedule(`${minute} ${hour} ${day} ${month} *`, async() => {
+
+  cron.schedule(`* 0 1 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan War League Starts in 8 hours`)
+        .setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+    cron.schedule(`* 8 1,2 * *`, async() => {
       for(let i = 0; i < clan.length+1; i++){
         const c =  clan[i].channel  
         console.log(c)
         const Embed = new EmbedBuilder()
           .setColor(0x0099FF)
-          .setTitle(`Raid Weekend has started`)
-          .setDescription(`End Date: ***${month}-${day}-${year}*** ***${hour}:${minute}UTC***`)
+          .setTitle(`Clan War League has started`)
+          .setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
         .setTimestamp()
         client.channels.cache.get(c).send({ embeds: [Embed] });
       }
@@ -83,10 +88,21 @@ client.on('ready', async() => {
       scheduled: true,
       timezone: "UTC"
     });
-  }, {
-    scheduled: true,
-    timezone: "CST"
-  });
+    cron.schedule(`* 8 2 * *`, async() => {
+      for(let i = 0; i < clan.length+1; i++){
+        const c =  clan[i].channel  
+        console.log(c)
+        const Embed = new EmbedBuilder()
+          .setColor(0x0099FF)
+          .setTitle(`Clan War League has started`)
+          .setDescription(`Last Day for CWL registration`)
+        .setTimestamp()
+        client.channels.cache.get(c).send({ embeds: [Embed] });
+      }
+    }, {
+      scheduled: true,
+      timezone: "UTC"
+    });
 
 })
 client.on('ready', async() => {
