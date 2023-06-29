@@ -51,14 +51,12 @@ client.on('ready', async() => {
     keepAlive: true,
   })
   console.log(`\nhttps://discord.com/oauth2/authorize?client_id=1102973967330983946&scope=bot&permissions=534723947592\n`)
-
 });
 client.on('ready', async() => {
-
   console.log("CWL")
   const clan = await Clans.find({})
 
-  cron.schedule(`* 0 1 * *`, async() => {
+  cron.schedule(`0 0 1 * *`, async() => {
     for(let i = 0; i < clan.length+1; i++){
       const c =  clan[i].channel  
       console.log(c)
@@ -73,38 +71,169 @@ client.on('ready', async() => {
     scheduled: true,
     timezone: "UTC"
   });
-    cron.schedule(`* 8 1,2 * *`, async() => {
-      for(let i = 0; i < clan.length+1; i++){
-        const c =  clan[i].channel  
-        console.log(c)
-        const Embed = new EmbedBuilder()
-          .setColor(0x0099FF)
-          .setTitle(`Clan War League has started`)
-          .setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
-        .setTimestamp()
-        client.channels.cache.get(c).send({ embeds: [Embed] });
-      }
-    }, {
-      scheduled: true,
-      timezone: "UTC"
-    });
-    cron.schedule(`* 8 2 * *`, async() => {
-      for(let i = 0; i < clan.length+1; i++){
-        const c =  clan[i].channel  
-        console.log(c)
-        const Embed = new EmbedBuilder()
-          .setColor(0x0099FF)
-          .setTitle(`Clan War League has started`)
-          .setDescription(`Last Day for CWL registration`)
-        .setTimestamp()
-        client.channels.cache.get(c).send({ embeds: [Embed] });
-      }
-    }, {
-      scheduled: true,
-      timezone: "UTC"
-    });
+  cron.schedule(`0 8 1,2 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan War League has started`)
+        .setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`0 8 2 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan War League has started`)
+        .setDescription(`Last Day for CWL registration`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
 
 })
+
+client.on('ready', async() => {
+  console.log("Season")
+  const clan = await Clans.find({})
+  cron.schedule(`0 0 1 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`New season has started`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+})
+
+client.on('ready', async() => {
+  console.log("Clan Games")
+  const clan = await Clans.find({})
+  cron.schedule(`1 8 22 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games has started and end the 28th at 8am UTC`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`1 8 23 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games: only 5 days left`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`1 8 24 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games: only 4 days left`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`0 8 25 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games: only 3 days left`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`1 8 26 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games: only 2 days left`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`0 8 27 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games: only 1 days left`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+  cron.schedule(`1 8 28 * *`, async() => {
+    for(let i = 0; i < clan.length+1; i++){
+      const c =  clan[i].channel  
+      console.log(c)
+      const Embed = new EmbedBuilder()
+        .setColor(0x0099FF)
+        .setTitle(`Clan Games have ended, you will have 7 days to collect rewards`)
+        //.setDescription(`***8AM UTC*** and will be open for registerastion till 8AM UTC on the 3rd`)
+      .setTimestamp()
+      client.channels.cache.get(c).send({ embeds: [Embed] });
+    }
+  }, {
+    scheduled: true,
+    timezone: "UTC"
+  });
+})
+
 client.on('ready', async() => {
   try {
     const response = await axios.get(`${COC_API_BASE}/goldpass/seasons/current`, {
@@ -113,9 +242,7 @@ client.on('ready', async() => {
       }
       
     });
-    //console.log(response.data.endTime == await Events.find({goldPassEnd:response.data.endTime }))
-    const end = await Events.find({goldPassEnd:response.data.endTime })
-    //console.log(end[0].goldPassEnd)
+    const end = await Events.find({})
     if(end[0] == null || undefined){
       const newEvents = await Events.create({
           goldPassStart: response.data.startTime,
@@ -123,15 +250,22 @@ client.on('ready', async() => {
       });
       const saved = await newEvents.save();
       console.log("added Goldpass Event")
-
     }else if(response.data.endTime == end[0].goldPassEnd){
       console.log("yep already have Goldpass Event")
     } else if(response.data.endTime != end[0].goldPassEnd){
-      const newEvents = await Events.updateOne({
+      const remove = {goldPassEnd: end[0].goldPassEnd}
+      const result = await Events.deleteOne(remove);
+      if (result.deletedCount === 1) {
+        console.log("Successfully deleted old Gold pass Event.");
+      } else {
+        console.log("No documents matched the query. Deleted 0 documents.");
+      }
+      const newEvents = await Events.create({
         goldPassStart: response.data.startTime,
         goldPassEnd: response.data.endTime,
     });
-    const saved1 = await newEvents.upateOne();
+    const saved = await newEvents.save();
+    console.log("added new Goldpass Event")
     }
   } catch (error) {
     console.error(error);
@@ -141,7 +275,7 @@ client.on('ready', async() => {
   console.log('\nAmount of Clans: '+clan.length)
   console.log('Amount of Users: '+user.length)
 
-  cron.schedule(`* */12 * * *`, async() => {
+  cron.schedule(`* 12 * * *`, async() => {
     console.log("hi")
     const t = await Events.find({})
     const text1 = t[0].goldPassEnd
@@ -177,7 +311,7 @@ client.on('messageCreate', async (message, Discord) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if (message.content.startsWith('!c')){
+    if (message.content === '!c'){
       console.log(message.author.username+ " ran !c")
       if(await Clans.find({ channel: message.channel.id}) != false){
         const channelIds = await Clans.find({ channel: message.channel.id})
@@ -213,7 +347,7 @@ client.on('messageCreate', async (message, Discord) => {
 
       }
     }    
-    if (message.content.startsWith('!clan')){
+    if (message.content.startsWith('!cs')){
       console.log(message.author.username+ " ran !clan")
         try {
             const response = await axios.get(`${COC_API_BASE}/clans/%23${args[0].toUpperCase()}`, {
@@ -392,79 +526,111 @@ client.on('messageCreate', async (message, Discord) => {
             \n**!p** or **!player**- gives info on the account that is tied to you
             \n**!set** **{tag}** - Sets a clan to a specefic channel to get updates on that clan
             \n**!c** - gets info on the clan that is set in the channel
-            \n**!clan** **{tag}** - searches for a clan`)
+            \n**!cs** **{tag}** - searches for a clan`)
             message.channel.send({ embeds: [Embed] });
     } 
-    // if (message.content.startsWith('!stats')){
-
-    //   var starts0 = performance.now();
-    //   try {
-    //     const response = await axios.get(`${COC_API_BASE}/clans/%232LLJUR0RC/currentwar`, {
-    //       headers: {
-    //         Authorization: `Bearer ${config.coc.apiKey}`
-    //       }
-          
-    //     });
-
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    //   var ends0 = performance.now();
-
-
-    //   var starts1 = performance.now();
-    //     try {
-    //       const response = await axios.get(`${COC_API_BASE}/clans/%232LLJUR0RC`, {
-    //         headers: {
-    //           Authorization: `Bearer ${config.coc.apiKey}`
-    //         }
-    //       });  
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //     var ends1 = performance.now();
-
-
-    //     var starts2 = performance.now();
-    //     try {
-    //       const response = await axios.get(`${COC_API_BASE}/clans/%232LLJUR0RC`, {
-    //         headers: {
-    //           Authorization: `Bearer ${config.coc.apiKey}`
-    //         }
-    //       });  
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //     var ends2 = performance.now();
-    //     var starts= [starts0, starts1, starts2]
-    //     var ends = [ends0, ends1, ends2]
-    //     console.log(ends,starts)
-    //     const newblock = "`"
-    //     // const Embed = new EmbedBuilder()
-    //     //   .setColor(0x0099FF)
-    //     //   .setTitle("Stats")
-    //     //   .setAuthor({ name: ` `})
-    //     //   .setFooter({text:`
-    //     //   -${newblock}/clans/{}/currentwar - ${ends[0] - starts[0]}${newblock}
-    //     //   \n-${newblock}/clans/{}/currentwar/leaguegroup - ${ends[1] - starts[1]}${newblock}
-    //     //   \n-${newblock}/players/{} - ${ends[2] - starts[2]}${newblock}
-    //     //   \n-${newblock}/clans/{}/capitalraidseasons - ${ends[3] - starts[3]}${newblock}
-    //     //   \n-${newblock}/clans/{} - ${ends[4] - starts[4]}${newblock}
-    //     //   \n-${newblock}/leagues/{}/seasons - ${ends[5] - starts[5]}${newblock}
-    //     //   \n-${newblock}/clans - ${ends[6] - starts[6]}${newblock}
-    //     //   \n-${newblock}/players/ - ${ends[7] - starts[7]}${newblock}
-    //     //   \n-${newblock}/locations/{}/rankings/players - ${ends[8] - starts[8]}${newblock}
-    //     //   \n-${newblock}/locations/{} - ${ends[9] - starts[9]}${newblock}
-    //     //   \n-${newblock}/locations/{}/rankings/clans - ${ends[10] - starts[10]}${newblock}
-    //     //   \n-${newblock}/players/{}/verifytoken - ${ends[11] - starts[11]}${newblock}
-    //     //   \n-${newblock}/clans/{}/warlog - ${ends[12] - starts[12]}${newblock}
-    //     //   \n-${newblock}/locations - ${ends[13] - starts[13]}${newblock}
-    //     //   \n-${newblock}/players/%23 - ${ends[14] - starts[14]}${newblock}
-    //     //   \n-${newblock}/locations/{}/rankings/capitals - ${ends[15] - starts[15]}${newblock}`})
-    //     //   .setTimestamp()
-      
-    //     //   message.channel.send({ embeds: [Embed] });
-    //   }
+    if (message.content==='!stats'){
+      var links = [ "/clans/%232LLJUR0RC/currentwar",
+                    "/clans/%232LLJUR0RC",
+                    "/clans/%232LLJUR0RC",
+                    "/clans/%232LLJUR0RC/capitalraidseasons",
+                    "/clans/%232LLJUR0RC",
+                    "/leagues/%232LLJUR0RC/seasons",
+                    "/clans",
+                    "/players/",
+                    "/locations/%232LLJUR0RC/rankings/players",
+                    "/locations/%232LLJUR0RC",
+                    "/locations/%232LLJUR0RC/rankings/clans",
+                    "/players/%232LLJUR0RC/verifytoken",
+                    "/clans/%232LLJUR0RC/warlog",
+                    "/locations",
+                    "/players/%23",
+                    "/locations/%232LLJUR0RC/rankings/capitals "
+                  ];
+      var data = []
+      var i = 0;
+      while(i < links.length){
+        var starts = performance.now();
+        try {
+          const response = await axios.get(`${COC_API_BASE}${links[i]}`, {
+            headers: {
+              Authorization: `Bearer ${config.coc.apiKey}`
+            }
+            
+          });
+  
+        } catch (error) {
+          console.error(error);
+        }
+        data[i] =  Math.round((performance.now() - starts) * 100) / 100;
+        i++;
+      }
+        const newblock = "``"
+        const Embed = new EmbedBuilder()
+          .setColor(0x0099FF)
+          .setTitle("Clash API Stats")
+          .setAuthor({ name: ` `})
+          .setDescription(`
+          -${newblock}/clans/{}/currentwar - ${data[0]}ms${newblock}
+          \n-${newblock}/clans/{}/currentwar/leaguegroup - ${data[1]}ms${newblock}
+          \n-${newblock}/players/{} - ${data[2]}ms${newblock}
+          \n-${newblock}/clans/{}/capitalraidseasons - ${data[3]}ms${newblock}
+          \n-${newblock}/clans/{} - ${data[4]}ms${newblock}
+          \n-${newblock}/leagues/{}/seasons - ${data[5]}ms${newblock}
+          \n-${newblock}/clans - ${data[6]}ms${newblock}
+          \n-${newblock}/players/ - ${data[7]}ms${newblock}
+          \n-${newblock}/locations/{}/rankings/players - ${data[8]}${newblock}
+          \n-${newblock}/locations/{} - ${data[9]}${newblock}
+          \n-${newblock}/locations/{}/rankings/clans - ${data[10]}${newblock}
+          \n-${newblock}/players/{}/verifytoken - ${data[11]}${newblock}
+          \n-${newblock}/clans/{}/warlog - ${data[12]}${newblock}
+          \n-${newblock}/locations - ${data[13]}${newblock}
+          \n-${newblock}/players/%23 - ${data[14]}${newblock}
+          \n-${newblock}/locations/{}/rankings/capitals - ${data[15]}${newblock}`)
+          .setTimestamp()
+           message.channel.send({ embeds: [Embed] });
+      }
+    if (message.content==='!info'){
+        const clan = await Clans.find({})
+        const user = await User.find({})
+        var i = 0;
+        var l = 0
+        var s = []
+        while(i < clan.length){
+          while(l < clan.length){
+            if(clan[i].serverId != clan[l].serverId){
+              s[l] = clan[l].serverId
+            }
+            l++;
+          }
+          i++;
+        }
+        var t = []
+        i = 0
+        l = 0
+        while(i < clan.length){
+          while(l < clan.length){
+            if(clan[i].clan != clan[l].clan){
+              t[l] = clan[l].clan
+            }
+            l++;
+          }
+          i++;
+        }
+        if(t.length == 0){
+          t[0] = clan[0].clan
+        }
+          const Embed = new EmbedBuilder()
+          .setColor(0x0099FF)
+          .setTitle("Clash Bot Info")
+          .setAuthor({ name: ` `})
+          .setDescription(`
+          -Amount of Clans Saved- ${t.length}
+          \n-Amount of Users Saved - ${user.length}
+          \n-Amount of Servers Saved - ${s.length}`)
+          .setTimestamp()
+            message.channel.send({ embeds: [Embed] });
+        }
 });
 
 client.login(config.discord.userToken);
